@@ -43,7 +43,10 @@ end
 ---@return boolean
 local function is_renderer_synthetic_message(message)
   local message_id = message and message.info and message.info.id
-  return message_id == '__opencode_revert_message__' or message_id == HIDDEN_MESSAGES_NOTICE_MESSAGE_ID
+  return message_id == '__opencode_revert_message__'
+    or message_id == HIDDEN_MESSAGES_NOTICE_MESSAGE_ID
+    or message_id == 'permission-display-message'
+    or message_id == 'question-display-message'
 end
 
 ---@param message OpencodeMessage|nil
